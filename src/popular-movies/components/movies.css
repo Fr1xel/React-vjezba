@@ -1,0 +1,15 @@
+.cursor-pointer{
+    cursor: pointer;
+}
+.border-radius{
+    border-radius: 1rem;
+}
+.hover-bigger{
+    transition:0.5s;
+}
+@media only screen and (min-width:1024px){
+    .hover-bigger:hover {
+        transform: scale(1.1);
+        filter: brightness(1.1);
+    }
+}

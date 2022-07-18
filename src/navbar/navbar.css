@@ -1,0 +1,40 @@
+body::before{
+    display: block;
+    content: "";
+    height: 60px;
+}
+body::-webkit-scrollbar{
+    background-color:transparent;
+    width:10px;
+
+}
+body::-webkit-scrollbar-thumb{
+    background-color:#C00000;
+    border-radius:1rem;
+}
+body{
+    background-color:rgb(13, 13, 13) !important;
+}
+.nav-background{
+    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
+    background-color: rgb(20, 20, 20);
+}
+.redder-text{
+    color:red !important;
+    filter: drop-shadow(0 0 1rem rgb(255, 0, 0));
+    transition:0.2s;
+}
+.redder-text:hover{
+    color:rgba(255, 0, 0, 0.637);
+}
+.reddish-text{
+    color:rgba(255, 0, 0, 0.637) !important;
+    transition:0.2s;
+}
+.reddish-text:hover{
+    color: red !important;;
+    filter: drop-shadow(0 0 1rem rgb(255, 0, 0));
+}
+.silver-border{
+    border-bottom: 1px solid rgb(57, 56, 56);
+}
