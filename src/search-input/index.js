@@ -1,6 +1,8 @@
+import { useState } from "react"
 import "./search.css"
 
 const SearchInput = () => {
+  const [serch, setSearch] = useState({})
     return (
         <section className="text-light pt-2 p-lg-0 text-center header-background">
       <div

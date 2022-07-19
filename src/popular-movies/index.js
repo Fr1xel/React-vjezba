@@ -9,9 +9,10 @@ import "bootstrap-icons/font/bootstrap-icons.css"
 const PopularOrTopRatedMovies = ({ code }) => {
     const [movies, setMovie] = useState([])
     const [loading, setLoading] = useState(true)
+    const [page, setPage] = useState(1)
     useEffect(() =>{
        const fetchPosts = async () =>{
-        const data = await axios.get(`https://api.themoviedb.org/3/movie/${code}?api_key=ac611aa60fbb0355792b075ff8337fbe&language=en-US&page=1`)
+        const data = await axios.get(`https://api.themoviedb.org/3/movie/${code}?api_key=ac611aa60fbb0355792b075ff8337fbe&language=en-US&page=${page}`)
         setMovie(data.data.results)
         setLoading(false)
        }
@@ -34,6 +35,12 @@ const PopularOrTopRatedMovies = ({ code }) => {
           >
             <Movies movies = {movies}/>
           </div>
+          <div className="d-flex justify-content-between">
+            <button className="page-button h3" onClick={() => page !== 1 ? setPage(page-1) : setPage(page)}><i className="bi bi-arrow-left"></i></button>
+          <p className="h3 color-red">Page: {page}</p>
+          <button className="page-button h3" onClick={() => setPage(page+1)}><i className="bi bi-arrow-right"></i></button>
+          </div>
+          
         </div>
       </div>
     </section>
