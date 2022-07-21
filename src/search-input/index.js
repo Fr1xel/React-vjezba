@@ -1,8 +1,8 @@
 import { useState } from "react"
 import "./search.css"
 
-const SearchInput = () => {
-  const [serch, setSearch] = useState({})
+const SearchInput = (props) => {
+  const { setSearch } = props 
     return (
         <section className="text-light pt-2 p-lg-0 text-center header-background">
       <div
@@ -20,6 +20,7 @@ const SearchInput = () => {
                 className="input-top"
                 id="movieSearch"
                 placeholder="Bad Boys"
+                onChange={event => {setSearch(event.target.value)}}
               />
             </form>
             <p className="lead text-secondary mt-2">

@@ -4,17 +4,23 @@ import PopularOrTopRatedMovies from "./popular-movies/index"
 import SeriesPromo from "./series-promo";
 import NowPlayingMovies from "./now-playing-movies";
 import CartoonPromo from "./cartoon-promo";
+import SearchResults from "./search-results";
 import Footer from "./footer";
 import './App.css';
 import MovieInfoModel from "./info-model-movie";
+import { useState } from "react";
 
 function App() {
+  const [search, setSearch] = useState("")
+  const [moduleIsOpen, setModuleIsOpen] = useState(false)
+  const [modalMovie, setModalMovie] = useState({})
   return (
     <>
     <Navbar />
-    <SearchInput/>
-    <MovieInfoModel/>
-    <PopularOrTopRatedMovies code="popular"/>
+    <SearchInput setSearch = { setSearch }/>
+    <SearchResults search = { search }/>
+    <MovieInfoModel moduleIsOpen = {moduleIsOpen} setModuleIsOpen = {setModuleIsOpen} modalMovie = {modalMovie}/>
+    <PopularOrTopRatedMovies code="popular" setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
     <SeriesPromo />
     <NowPlayingMovies/>
     <CartoonPromo/>

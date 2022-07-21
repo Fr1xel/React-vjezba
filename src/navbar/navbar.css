@@ -38,3 +38,6 @@ body{
 .silver-border{
     border-bottom: 1px solid rgb(57, 56, 56);
 }
+.z-999{
+    z-index: 999;
+}

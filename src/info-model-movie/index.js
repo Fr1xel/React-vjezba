@@ -1,25 +1,37 @@
 import "./info-model.css"
+import Modal from "react-modal"
+import Rating from "../rating-color"
 
-//!!!----UNDER CONSTRUCTION----!!!//
-
-const MovieInfoModel = (movie) => {
-    movie.id ?
-        <div className="vw-100 vh-100 d-flex flex-column justify-content-center align-items-center position-fixed-center z-9998 darker-background click-leave text-light">
-    <div className="w-90 h-60 text-center dark-background-poster border-radius position-relative z-9999">
-    <button className="position-absolute tl-0 button-close "><i className="bi bi-x h1"></i></button>
-    <div className="overflow-y-scroll scroll-transparent height-100">
-    <div className="container  iframe-place">
-    <h1 className="p-5">{movie.title}</h1>
-    <p className="lead p-5">{movie.overview}</p>
-    <p className="lead"><span className="fw-bold">Original Title:</span> {movie.original_title}</p>
-    <p className="lead"><span className="fw-bold">Rating:</span> <span className="rating">{movie.vote_average}</span>/10</p>
-    </div>
-    </div>
-    </div>
-    </div>
-    
-    :
-        <></>
+const MovieInfoModel = (props) => {
+    const {moduleIsOpen, setModuleIsOpen, modalMovie} = props
+    if(modalMovie.backdrop_path){
+        return(
+            <Modal
+             isOpen={moduleIsOpen}
+             overlayClassName={`z-9999 position-fixed-center`}
+             className="custom-body-modal"
+             style={{
+                content: {
+                    backgroundImage:`url(https://image.tmdb.org/t/p/w500/${modalMovie.backdrop_path})`,
+                    backgroundSize:"cover",
+                    backgrondRepeat:"no-repeat"
+                }
+             }}
+           >
+            <div className="darker-background h-100 w-100 text-light">
+             <button className="info-modal-button h1" onClick={() => {setModuleIsOpen(false)}}><i className="bi bi-x text-light"></i></button>
+             <div>
+                 <div className="container text-center">
+                     <h1>{modalMovie.title}</h1>
+                     <p className="lead mt-5">{modalMovie.overview}</p>
+                     <p className="lead mt-5"><span className="fw-bold">Original Title:</span> {modalMovie.original_title}</p>
+                     <Rating movie = {modalMovie}/>
+                 </div>
+             </div>
+             </div>
+           </Modal> 
+         )
+    }
 }
 
 export default MovieInfoModel

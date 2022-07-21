@@ -6,7 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import "bootstrap-icons/font/bootstrap-icons.css"
 
-const PopularOrTopRatedMovies = ({ code }) => {
+const PopularOrTopRatedMovies = (props) => {
+  const {code, setModuleIsOpen, setModalMovie} = props
     const [movies, setMovie] = useState([])
     const [loading, setLoading] = useState(true)
     const [page, setPage] = useState(1)
@@ -33,7 +34,7 @@ const PopularOrTopRatedMovies = ({ code }) => {
             className="row g-5 text-center pt-3 max-width-100 m-auto"
             id="popularDiv"
           >
-            <Movies movies = {movies}/>
+            <Movies movies = {movies} setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
           </div>
           <div className="d-flex justify-content-between">
             <button className="page-button h3" onClick={() => page !== 1 ? setPage(page-1) : setPage(page)}><i className="bi bi-arrow-left"></i></button>

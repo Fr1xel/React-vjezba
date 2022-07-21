@@ -3,7 +3,7 @@ import "./navbar.css"
 const Navbar = () => {
     return (
         <nav
-      className="navbar navbar-dark navbar-expand-lg py-3 fixed-top silver-border nav-background"
+      className="navbar navbar-dark navbar-expand-lg py-3 fixed-top silver-border nav-background z-999"
     >
       <div className="container">
         <a href="#" className="navbar-brand redder-text"
