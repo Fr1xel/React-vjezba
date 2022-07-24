@@ -1,4 +1,3 @@
-import { useState } from "react"
 import "./search.css"
 
 const SearchInput = (props) => {
@@ -41,6 +40,7 @@ const SearchInput = (props) => {
                 className="input-top"
                 placeholder="Tom Hanks"
                 id="peopleSearch"
+                onChange={event => setSearch(event.target.value)}
               />
             </form>
             <p className="lead text-secondary mt-2">

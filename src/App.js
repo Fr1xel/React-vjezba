@@ -18,13 +18,13 @@ function App() {
     <>
     <Navbar />
     <SearchInput setSearch = { setSearch }/>
-    <SearchResults search = { search }/>
+    <SearchResults search = { search } setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
     <MovieInfoModel moduleIsOpen = {moduleIsOpen} setModuleIsOpen = {setModuleIsOpen} modalMovie = {modalMovie}/>
     <PopularOrTopRatedMovies code="popular" setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
     <SeriesPromo />
-    <NowPlayingMovies/>
+    <NowPlayingMovies setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
     <CartoonPromo/>
-    <PopularOrTopRatedMovies code="top_rated"/>
+    <PopularOrTopRatedMovies code="top_rated" setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
     <Footer/>
     </>
   );

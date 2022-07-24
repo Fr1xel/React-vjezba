@@ -36,7 +36,6 @@
     position: absolute;
     inset: 40px;
     border: 1px solid rgb(204, 204, 204);
-    background: url("https://image.tmdb.org/t/p/w500//odJ4hx6g6vBt4lBWKFD1tI8WS4x.jpg") 0% 0% / cover rgb(255, 255, 255);
     overflow: auto;
     border-radius: 4px;
     outline: none;

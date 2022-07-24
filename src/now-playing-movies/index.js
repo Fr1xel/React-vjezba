@@ -3,7 +3,8 @@ import { useState, useEffect } from "react"
 import Movies from "./components/movies"
 import axios from "axios"
 
-const NowPlayingMovies = () => {
+const NowPlayingMovies = (props) => {
+  const {setModuleIsOpen, setModalMovie} = props
     const [movies, setMovie] = useState([])
     const [loading, setLoading] = useState(true)
     useEffect(() =>{
@@ -20,7 +21,7 @@ const NowPlayingMovies = () => {
       <div className="container">
         <h1 className="color-red">Now Playing <i className="bi bi-clock"></i></h1>
         <div className="d-flex scroll-right py-3 text-center" id="nowPlaying">
-            <Movies movies = {movies}/>
+            <Movies movies = {movies} setModuleIsOpen = {setModuleIsOpen} setModalMovie = {setModalMovie}/>
         </div>
       </div>
     </section>
