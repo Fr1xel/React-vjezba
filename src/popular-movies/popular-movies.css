@@ -3,3 +3,7 @@
     color: red;
     border: 0;
 }
+.max-width-50rem{
+    max-height: 40rem;
+    overflow-y: scroll;
+}
