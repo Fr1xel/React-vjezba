@@ -7,3 +7,6 @@
     max-height: 40rem;
     overflow-y: scroll;
 }
+.overflow-doesnt-matter{
+    overflow: hidden;
+}
