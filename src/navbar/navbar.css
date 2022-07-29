@@ -3,21 +3,16 @@ body::before{
     content: "";
     height: 60px;
 }
+.navbar-bg-dark{
+    background-color: rgb(13, 13, 13);
+}
 body::-webkit-scrollbar{
-    background-color:transparent;
+    background-color:grey;
     width:10px;
-
 }
 body::-webkit-scrollbar-thumb{
     background-color:#C00000;
     border-radius:1rem;
-}
-body{
-    background-color:rgb(13, 13, 13) !important;
-}
-.nav-background{
-    box-shadow: rgb(0, 0, 0) 0px 20px 30px -10px;
-    background-color: rgb(20, 20, 20);
 }
 .redder-text{
     color:red !important;
